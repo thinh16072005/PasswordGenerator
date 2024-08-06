@@ -7,6 +7,7 @@ public class Launcher {
         System.out.print("Enter the length of password (at least 8 characters): ");
         Scanner sc = new Scanner(System.in);
         int length = sc.nextInt();
+        int choice = sc.nextInt();
         
         // Initialize objects
         Criteria cr = new Criteria();
@@ -15,10 +16,19 @@ public class Launcher {
         // Output and Error handling:
         try {
             System.out.println("Choose the following criteria for your password (1 for YES, 0 for NO):");
+            
             System.out.println("Does the password contain uppercase letters? "); 
+            cr.setIncludeUpperCase(choice);
+
             System.out.println("Does the password contain lowercase letters? ");
+            cr.setIncludeLowerCase(choice);
+
             System.out.println("Does the password contain numbers? ");
+            cr.setIncludeNumbers(choice);
+
             System.out.println("Does the password contain special symbols? ");
+            cr.setIncludeSymbols(choice);
+
             System.out.println(passwordGenerator.generatePassword(
                 length,
                 cr.isIncludeUpperCase(),

@@ -25,25 +25,25 @@ public class Criteria {
     }
 
     // Setters
-    public void setIncludeUpperCase(boolean includeUpperCase) {
+    public void setIncludeUpperCase(int upperCaseChoice) {
         if (upperCaseChoice == 1) {
             includeUpperCase = true;
         } else includeUpperCase = false;
     }
 
-    public void setIncludeLowerCase(boolean includeLowerCase) {
+    public void setIncludeLowerCase(int lowerCaseChoice) {
         if (lowerCaseChoice == 1) {
             includeLowerCase = true;
         } else includeLowerCase = false;
     }
 
-    public void setIncludeNumbers(boolean includeNumbers) {
+    public void setIncludeNumbers(int numbersChoice) {
         if (numbersChoice == 1) {
             includeNumbers = true;
         } else includeNumbers = false;
     }
 
-    public void setIncludeSymbols(boolean includeSymbols) {
+    public void setIncludeSymbols(int symbolsChoice) {
         if (symbolsChoice == 1) {
             includeSymbols = true;
         } else includeSymbols = false;
