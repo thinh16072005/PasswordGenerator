@@ -16,7 +16,16 @@ public class Launcher {
         Criteria cr = new Criteria();
         PasswordGenerator passwordGenerator = new PasswordGenerator();
 
-
+        // Check if the length is at least 8 characters:
+        while (true) {
+            if (length < 8) {
+                System.out.print("The password length must be at least 8 characters. Please enter a valid length: ");
+                length = sc.nextInt();
+            } else {
+                break;
+            }
+        }
+        
         // Criteria for the password based on user's choice:
         System.out.println("Choose the following criteria for your password (1 for YES, 0 for NO):");
             
