@@ -50,9 +50,5 @@ public class PasswordGenerator {
         }
 
         return passwordBuilder.toString();
-    }
-
-    
-
-    
+    } 
 }
