@@ -7,6 +7,7 @@ public class PasswordGenerator {
     public static final String NUMBERS = "0123456789";
     public static final String SYMBOLS = "!@#$%^&*()-_=+[]{};:,.<>/?";
 
+    
     // Create Random object:
     private final Random rand;
 
@@ -19,19 +20,22 @@ public class PasswordGenerator {
 
     public String generatePassword(
         int length, 
-        boolean includeUpperCase, 
-        boolean includeLowerCase, 
-        boolean includeNumbers, 
-        boolean includeSymbols) {
+        boolean includeUpperCase,
+        boolean includeLowerCase,
+        boolean includeNumbers,
+        boolean includeSymbols) 
+    {
 
         StringBuilder passwordBuilder = new StringBuilder();
 
         String validCharacters = "";
 
+        // Criteria of a password:
         if (includeUpperCase) validCharacters += UPPER_CASE;
         if (includeLowerCase) validCharacters += LOWER_CASE;
         if (includeNumbers) validCharacters += NUMBERS;
         if (includeSymbols) validCharacters += SYMBOLS;
+
 
         // Generate a password:
         for (int i = 0; i < length; i++) {
@@ -47,4 +51,8 @@ public class PasswordGenerator {
 
         return passwordBuilder.toString();
     }
+
+    
+
+    
 }
