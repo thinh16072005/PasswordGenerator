@@ -1,16 +1,13 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Launcher {
+public class Launcher extends Criteria {
     public static void main(String[] args) {
         System.out.println("Welcome to the Password Generator!");
         System.out.print("Enter the length of password (at least 8 characters): ");
         
         Scanner sc = new Scanner(System.in);
         int length = sc.nextInt();
-
-        // The choices for the criteria:
-        int upperCaseChoice, lowerCaseChoice, numbersChoice, symbolsChoice;
 
         // Initialize objects
         Criteria cr = new Criteria();

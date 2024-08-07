@@ -5,13 +5,10 @@ public class Criteria {
     public static final String NUMBERS = "0123456789";
     public static final String SYMBOLS = "!@#$%^&*()-_=+[]{};:,.<>/?";
 
-    int upperCaseChoice, lowerCaseChoice, numbersChoice, symbolsChoice;
-
+    static int upperCaseChoice, lowerCaseChoice, numbersChoice, symbolsChoice;
+    
     // Create attributes:
-    private boolean includeUpperCase;
-    private boolean includeLowerCase;
-    private boolean includeNumbers;
-    private boolean includeSymbols;
+    private boolean includeUpperCase, includeLowerCase, includeNumbers, includeSymbols;
 
     // Getters
     public boolean isIncludeUpperCase() {
