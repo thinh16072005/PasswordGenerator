@@ -1,12 +1,6 @@
 import java.util.Random;
 
-public class PasswordGenerator {
-    // Character pools
-    public static final String UPPER_CASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public static final String LOWER_CASE = "abcdefghijklmnopqrstuvwxyz";
-    public static final String NUMBERS = "0123456789";
-    public static final String SYMBOLS = "!@#$%^&*()-_=+[]{};:,.<>/?";
-
+public class PasswordGenerator extends Criteria {
     
     // Create Random object:
     private final Random rand;
