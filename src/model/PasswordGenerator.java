@@ -2,7 +2,12 @@ package model;
 
 import java.util.Random;
 
-public class PasswordGenerator extends Criteria {
+public class PasswordGenerator  {
+
+    public static final String UPPER_CASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public static final String LOWER_CASE = "abcdefghijklmnopqrstuvwxyz";
+    public static final String NUMBERS = "0123456789";
+    public static final String SYMBOLS = "!@#$%^&*()-_=+[]{};:,.<>/?";
     
     // Create Random object:
     private final Random rand;
@@ -27,10 +32,10 @@ public class PasswordGenerator extends Criteria {
         String validCharacters = "";
 
         // model.Criteria of a password:
-        if (includeUpperCase) validCharacters += Criteria.UPPER_CASE;
-        if (includeLowerCase) validCharacters += Criteria.LOWER_CASE;
-        if (includeNumbers) validCharacters += Criteria.NUMBERS;
-        if (includeSymbols) validCharacters += Criteria.SYMBOLS;
+        if (includeUpperCase) validCharacters += UPPER_CASE;
+        if (includeLowerCase) validCharacters += LOWER_CASE;
+        if (includeNumbers) validCharacters += NUMBERS;
+        if (includeSymbols) validCharacters += SYMBOLS;
 
 
         // Generate a password:
@@ -44,7 +49,6 @@ public class PasswordGenerator extends Criteria {
             // Store characters in passwordBuilder:
             passwordBuilder.append(getCharacterIndex);
         }
-
         return passwordBuilder.toString();
     } 
 }

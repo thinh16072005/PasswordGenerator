@@ -1,4 +1,5 @@
-package view;/* The UI of the password generator app */
+package view;
+/* The UI of the password generator app */
 // This will inherit the JFrame superclass
 import model.PasswordGenerator;
 
@@ -9,7 +10,7 @@ import java.awt.event.ActionListener;
 
 public class PasswordGeneratorGUI extends JFrame {
     // Create object from model.PasswordGenerator class
-    PasswordGenerator generator;
+    private PasswordGenerator generator;
 
     // Create the constructor
     public PasswordGeneratorGUI() {
@@ -48,16 +49,17 @@ public class PasswordGeneratorGUI extends JFrame {
         // Create result text area:
         JTextArea passwordOutput = new JTextArea();
         passwordOutput.setEditable(false); // Prevent the editing
-        passwordOutput.setFont(new Font("Dialog", Font.PLAIN, 12));
+        passwordOutput.setFont(new Font("Dialog", Font.PLAIN, 32));
+
         JScrollPane scrollPane = new JScrollPane(passwordOutput); // Add the scroll-ability when the output is too long
-        scrollPane.setBounds(25, 97, 479, 50);
+        scrollPane.setBounds(25, 97, 479, 70);
         scrollPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         add(scrollPane);
 
         /* Create password length input: */
         // The text field:
         JTextArea passwordLengthInput = new JTextArea();
-        passwordLengthInput.setFont(new Font("Dialog", Font.PLAIN, 12));
+        passwordLengthInput.setFont(new Font("Dialog", Font.PLAIN, 20));
         passwordLengthInput.setBounds(480, 215, 25, 25);
         passwordLengthInput.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         add(passwordLengthInput);
@@ -101,8 +103,8 @@ public class PasswordGeneratorGUI extends JFrame {
         generateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Validation: only passwordLengthLabel > 8 and one of the toggled button is activated:
-                if (passwordLengthInput.getText().length() < 8) return;
+                // Validation: only passwordLengthLabel >= 0 and one of the toggled button is activated:
+                if (passwordLengthInput.getText().length() <= 0) return;
                 boolean anyToggleSelected = upperCaseButton.isSelected() ||
                                             lowerCaseButton.isSelected() ||
                                             symbolsButton.isSelected() ||
@@ -115,9 +117,8 @@ public class PasswordGeneratorGUI extends JFrame {
                             passwordLength,
                             upperCaseButton.isSelected(),
                             lowerCaseButton.isSelected(),
-                            symbolsButton.isSelected(),
-                            numbersButton.isSelected()
-                    );
+                            numbersButton.isSelected(),
+                            symbolsButton.isSelected());
                     // Display password back to user:
                     passwordOutput.setText(generatedPassword);
                 }
