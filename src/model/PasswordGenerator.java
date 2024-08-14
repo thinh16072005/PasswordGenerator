@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Random;
 
 public class PasswordGenerator extends Criteria {
@@ -24,11 +26,11 @@ public class PasswordGenerator extends Criteria {
 
         String validCharacters = "";
 
-        // Criteria of a password:
-        if (includeUpperCase) validCharacters += UPPER_CASE;
-        if (includeLowerCase) validCharacters += LOWER_CASE;
-        if (includeNumbers) validCharacters += NUMBERS;
-        if (includeSymbols) validCharacters += SYMBOLS;
+        // model.Criteria of a password:
+        if (includeUpperCase) validCharacters += Criteria.UPPER_CASE;
+        if (includeLowerCase) validCharacters += Criteria.LOWER_CASE;
+        if (includeNumbers) validCharacters += Criteria.NUMBERS;
+        if (includeSymbols) validCharacters += Criteria.SYMBOLS;
 
 
         // Generate a password:

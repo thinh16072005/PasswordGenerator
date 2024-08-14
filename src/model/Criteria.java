@@ -1,3 +1,5 @@
+package model;
+
 public class Criteria {
     // Characters pool:
     public static final String UPPER_CASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
